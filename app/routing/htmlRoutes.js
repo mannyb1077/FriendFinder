@@ -1,17 +1,18 @@
 var path = require("path");
-var express = require("express");
-var app = express.Router();
+//var express = require("express");
+//var app = express.Router();
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-});
+module.exports = function(app){
 
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/survey.html"));
-});
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
 
-app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-});
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
 
-module.exports = app;
+    app.get("/*", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+};

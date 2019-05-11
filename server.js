@@ -13,10 +13,13 @@ var PORT = 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+//app.use(express.json());
 
-app.use(apiroutes);
-app.use(htmlroutes);
+
+require("./app/routing/apiRoutes")(app)
+require("./app/routing/htmlRoutes")(app)
+// app.use(apiroutes);
+// app.use(htmlroutes);
 
 
 

@@ -15,7 +15,41 @@ var friends = [
             5,
             1
         ]
+    },
+    {
+        "name": "John",
+        "picture": " ",
+        "scores[]":
+        [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "name": "Someone",
+        "picture": " ",
+        "scores[]":
+        [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
     }
 ];
 
-module.exports - friends;
+module.exports = friends;
