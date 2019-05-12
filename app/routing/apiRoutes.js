@@ -35,8 +35,10 @@ module.exports = function(app){
         for (var i = 0; i < friends.length; i++) {
           var currentFriend = friends[i];
           totalDifference = 0;
+          
           // We then loop through all the scores of each friend
-          for (var j = 0; j < currentFriend.scores; j++) {
+          for (var j = 0; j < currentFriend.scores.length; j++) {
+              
             var currentFriendScore = currentFriend.scores[j];
             var currentUserScore = userScores[j];
            
@@ -62,55 +64,3 @@ module.exports = function(app){
       });
     
 };
-
-//////
-//var express = require("express");
-//var app = express();
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-//var friends = require("../data/friends.js");
-
-// module.exports = function(app){
-//     app.get("/api/friends", function(req, res){
-//         res.json(friends);
-//     });
-//     app.post("/api/friends", function(req, res){
-
-//         // friends Information
-//         var friendScores = req.body.scores;
-//         //var count = 0;
-//         var scores = [];
-//         var match = 0;
-        
-//         // goes through friends in list
-//         for(var i = 0; i < friends.length; i++){
-//             var difference = 0;
-
-//             //goes through scores
-//             for (var x = 0; x < friendScores.length; i++){
-//                 difference += (Math.abs(parseInt(friends[i] - parseInt(friendScores[x]))));
-//             }
-
-//             // pushes info into scores
-//             scores.push(difference);
-//         }
-//         //Find Match
-//         for(var i = 0; i < scores.length; i++){
-//             if(scores[i]<= scores[match]){
-//                 match = i;
-//             }
-//         }
-        
-//         friends.push(req.body);
-//         //returns matched friend
-//         var bestMatch = friends[match];
-//         res.json(bestMatch);
-
-       
-       
-//     })
-// };//End of module.exports
-
-//////////////
